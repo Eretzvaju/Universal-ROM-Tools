@@ -1,4 +1,6 @@
-Universal ROM Cleaner vous permet de nettoyer vos romsets facilement en se basant sur les attributs entre parenthèses et entre crochets de vos fichiers.
+# Universal ROM Cleaner 
+
+Ce logiciel vous permet de nettoyer vos romsets facilement en se basant sur les attributs entre parenthèses et entre crochets de vos fichiers.
 
 - Il est multilingue (Anglais/Français)
 - Il se veut simple d’utilisation (tout fonctionne à la souris par de simple glissez déplacez)
