@@ -5,7 +5,7 @@ Ensemble de logiciels déstinés à aider la gestion de bibliotheque de ROMs pou
 Composé de :
 - Universal ROM Cleaner : Nettoyeur de ROMs
 - Universal XML Scraper : Scraper de ROMs
-- Universal XML Editor : Editeur de fichier XML
+- Universal XML Editor : Editeur de fichier XML (à venir) 
 
 Merci à :  
 [RECALBOX] (http://www.recalbox.com/ "Front end pour le Raspeberry Pi")  
