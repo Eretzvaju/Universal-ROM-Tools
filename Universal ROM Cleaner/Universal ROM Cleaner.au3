@@ -11,7 +11,6 @@
 #AutoIt3Wrapper_Run_Tidy=y
 #Tidy_Parameters=/reel
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
-;~ #AutoIt3Wrapper_Icon=UxmlS.ico
 
 ;*************************************************************************
 ;**									**
