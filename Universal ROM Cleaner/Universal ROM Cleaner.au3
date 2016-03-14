@@ -38,6 +38,8 @@
 #include "../Include/_ExtMsgBox.au3"
 #include "../Include/_Trim.au3"
 
+TEST de MODIF
+
 ;FileInstall
 ;-----------
 Global $SOURCE_DIRECTORY = @ScriptDir
