@@ -14,10 +14,10 @@
 ;~ #AutoIt3Wrapper_Icon=UxmlS.ico
 
 ;*************************************************************************
-;**																		**
-;**						Universal Rom Cleaner							**
-;**						LEGRAS David									**
-;**																		**
+;**									**
+;**						Universal Rom Cleaner	**
+;**						LEGRAS David		**
+;**									**
 ;*************************************************************************
 
 ;DÃ©finition des librairies
@@ -38,12 +38,10 @@
 #include "../Include/_ExtMsgBox.au3"
 #include "../Include/_Trim.au3"
 
-TEST de MODIF
-
 ;FileInstall
 ;-----------
 Global $SOURCE_DIRECTORY = @ScriptDir
-If Not _FileCreate($SOURCE_DIRECTORY & "\test") Then ;Vérification des droits en écriture
+If Not _FileCreate($SOURCE_DIRECTORY & "\test") Then ;VÃ©rification des droits en Ã©criture
 	$SOURCE_DIRECTORY = @AppDataDir & "\Universal_ROM_Tools"
 	DirCreate($SOURCE_DIRECTORY)
 Else
@@ -56,7 +54,7 @@ FileInstall(".\LanguageFiles\URC-ENGLISH.XML", $SOURCE_DIRECTORY & "\LanguageFil
 FileInstall(".\LanguageFiles\URC-FRENCH.XML", $SOURCE_DIRECTORY & "\LanguageFiles\URC-FRENCH.XML")
 FileInstall(".\Ressources\Universal_Rom_Cleaner.ico", $SOURCE_DIRECTORY & "\Ressources\Universal_Rom_Cleaner.ico")
 
-;Définition des Variables
+;DÃ©finition des Variables
 ;-------------------------
 Global $PathConfigINI = $SOURCE_DIRECTORY & "\URC-config.ini"
 Global $LANG_DIR = $SOURCE_DIRECTORY & "\LanguageFiles"; Where we are storing the language files.
@@ -74,9 +72,9 @@ EndIf
 ;Principal;
 ;---------;
 
-_LANG_LOAD($LANG_DIR, $user_lang) ;Chargement de la langue par défaut
+_LANG_LOAD($LANG_DIR, $user_lang) ;Chargement de la langue par dÃ©faut
 
-#Region ### START Koda GUI section ### Form= ;Création de l'interface
+#Region ### START Koda GUI section ### Form= ;CrÃ©ation de l'interface
 $F_UniversalCleaner = GUICreate(_MultiLang_GetText("main_gui"), 523, 343, 192, 124)
 GUISetBkColor(0x34495C)
 $H_MF = GUICtrlCreateMenu(_MultiLang_GetText("mnu_file"))
@@ -165,7 +163,7 @@ Func _GUI_REFRESH() ;Rafraichissement de l'interface
 	GUICtrlSetData($H_LV_IGNORE, _MultiLang_GetText("lv_ignore"))
 EndFunc   ;==>_GUI_REFRESH
 
-Func _CREATEARRAY_ROM($V_ROMPath) ;Création de la liste des ROMs (Chemin des ROMs)
+Func _CREATEARRAY_ROM($V_ROMPath) ;CrÃ©ation de la liste des ROMs (Chemin des ROMs)
 	Local $A_ROMList = _FileListToArray($V_ROMPath, "*.*z*")
 	ProgressOn(_MultiLang_GetText("prbr_createarray_rom_title"), "", "0%")
 	If @error = 1 Then
@@ -200,7 +198,7 @@ Func _CREATEARRAY_ROM($V_ROMPath) ;Création de la liste des ROMs (Chemin des ROM
 	Return $A_ROMList
 EndFunc   ;==>_CREATEARRAY_ROM
 
-Func _CREATEARRAY_ATTRIBUT($A_ROMList) ;Création de la liste des Attributs (Array des ROMs)
+Func _CREATEARRAY_ATTRIBUT($A_ROMList) ;CrÃ©ation de la liste des Attributs (Array des ROMs)
 	Local $A_ROMAttribut[1]
 	ProgressOn(_MultiLang_GetText("prbr_createarray_attribut_title"), "", "0%")
 	For $B_ROMList = 0 To UBound($A_ROMList) - 1
@@ -218,7 +216,7 @@ Func _CREATEARRAY_ATTRIBUT($A_ROMList) ;Création de la liste des Attributs (Arra
 	Return $A_ROMAttribut
 EndFunc   ;==>_CREATEARRAY_ATTRIBUT
 
-Func _MOVE_ROM($V_ROMPath, $I_LV_ATTRIBUTE, $A_ROMList) ;Définition des ROMs à deplacer (Chemin des ROMs, Indexe de la LV des attributs triés, Array des ROMs)
+Func _MOVE_ROM($V_ROMPath, $I_LV_ATTRIBUTE, $A_ROMList) ;DÃ©finition des ROMs Ã  deplacer (Chemin des ROMs, Indexe de la LV des attributs triÃ©s, Array des ROMs)
 	Local $A_TEMP_RomList
 	ProgressOn(_MultiLang_GetText("prbr_move_rom_title"), "", "0%")
 	$A_LV_ATTRIBUTE = _GUIListViewEx_ReturnArray($I_LV_ATTRIBUTE)
@@ -245,7 +243,7 @@ Func _MOVE_ROM($V_ROMPath, $I_LV_ATTRIBUTE, $A_ROMList) ;Définition des ROMs à d
 	Return $A_ROMList
 EndFunc   ;==>_MOVE_ROM
 
-Func _SUPPR_ROM($V_ROMPath, $I_LV_SUPPRESS, $A_ROMList) ;Définition des ROMs à ne pas garder (Chemin des ROMs, Indexe de la LV des attributs non conservé, Array des ROMs)
+Func _SUPPR_ROM($V_ROMPath, $I_LV_SUPPRESS, $A_ROMList) ;DÃ©finition des ROMs Ã  ne pas garder (Chemin des ROMs, Indexe de la LV des attributs non conservÃ©, Array des ROMs)
 	ProgressOn(_MultiLang_GetText("prbr_suppr_rom_title"), "", "0%")
 	$A_LV_SUPPRESS = _GUIListViewEx_ReturnArray($I_LV_SUPPRESS)
 	For $B_ROMList = 0 To UBound($A_ROMList) - 1
@@ -359,7 +357,7 @@ Func _LANG_LOAD($LANG_DIR, $user_lang) ;Chargement de la langue (Chemin des fich
 			"3009 " & _ ;English_Zimbabwe
 			"3409" ;English_Philippines
 
-	$LANGFILES[1][0] = "Français" ; French
+	$LANGFILES[1][0] = "FranÃ§ais" ; French
 	$LANGFILES[1][1] = $LANG_DIR & "\URC-FRENCH.XML"
 	$LANGFILES[1][2] = "040c " & _ ;French_Standard
 			"080c " & _ ;French_Belgian
@@ -397,7 +395,7 @@ Func _LANG_LOAD($LANG_DIR, $user_lang) ;Chargement de la langue (Chemin des fich
 	Return $LANGFILES
 EndFunc   ;==>_LANG_LOAD
 
-Func _LANGUE_SelectGUI($_gh_aLangFileArray, $default = @OSLang) ;Interface de séléction de la langue (Array des langues, langue par défaut)
+Func _LANGUE_SelectGUI($_gh_aLangFileArray, $default = @OSLang) ;Interface de sÃ©lÃ©ction de la langue (Array des langues, langue par dÃ©faut)
 	GUISetState(@SW_DISABLE, $F_UniversalCleaner)
 	If $_gh_aLangFileArray = -1 Then Return SetError(1, 0, 0)
 	If IsArray($_gh_aLangFileArray) = 0 Then Return SetError(1, 0, 0)
