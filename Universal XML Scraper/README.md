@@ -1,6 +1,6 @@
 # Universal XML Scraper
 
-Ce logiciel vous scraper vos ROMs a fin d'obtenir un fichier XML contenant les informations de vos jeux ainsi que les images correspondantes
+Ce logiciel vous permet de scraper vos ROMs a fin d'obtenir un fichier XML contenant les informations de vos jeux ainsi que les images correspondantes
 
 <img src="http://zupimages.net/up/16/09/n6mr.jpg" alt="" width="366" height="219" />
 <ul>
